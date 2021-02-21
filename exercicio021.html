@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>compara dados</title>
+		<meta chaset="utf-8"/>
+	</head>
+		<script>
+			
+			var personas = [
+				["Genesys", "Rondon", 22, "Venezolana"],
+				["Danilson", "Nunes", 35, "Venezolana" ],
+				["Marianelena", "Mendez", 40, "Venezolana"],
+				["Lucas", "Fernandes", 20, "Brasilero"]
+			];	
+			var textos = ['Nome', 'Sobrenome', 'Edade', 'Nacionalidade']
+			var captura = new Array(textos.length);
+			var registro
+			var cont=0;
+			function CapturaDatos() {
+				while(cont<textos.length)  {
+					captura [cont] = prompt(textos[cont]);
+					document.write(textos[cont], " = ", captura[cont]+"<br>")
+					cont++;
+				}
+			}
+			CapturaDatos();
+			var maiores = 0;
+			
+			for(var i = 0; i < personas.length; i++) {
+				if (personas[i][2] > captura [2]) { 
+					maiores = maiores + 1;
+					document.write("<h2>" + personas[i][0], " maior que ", captura[0] + "</h2>");
+				}
+				document.write("<br>");
+				for(var j = 0; j < personas[i].length; j++) {
+					document.write(textos[j], " = ", personas[i][j]+"<br>");		
+				}
+			}
+				if (maiores > 0) {
+					document.write("<h2>" + maiores, " pelo menos maior que " + captura[0] + "</h2>");
+				}
+				else {
+					document.write("<h2>" + captura[0], " é o maior" + "</h2>");
+				}	
+		</script>
+</html>
+	
